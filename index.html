@@ -123,8 +123,8 @@ btn.onclick = function(){
 	btn2.style.display = "none";
 	btn3.style.display = "none";
 	sc.style.display = "block";
-	setInterval(createPoint, 500);
-	setInterval(proverka, 5000);
+	setInterval(createPoint, 300);
+	setInterval(proverka, 6000);
 
 
 }
@@ -176,11 +176,11 @@ btn3.onclick = function(){
 
 let proverka = function(){
 
-	if(s > 9) {
+	if(s > 14) {
 		if(!alert('U won(')){window.location.reload();}
 	}
 
-	if(s < 9) {
+	if(s < 14) {
 		if(!alert('U lose try again(')){window.location.reload();}
 	}
 
