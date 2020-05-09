@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style type="text/css">
+	.body{
+		width: 1000px;
+		height: 800px;
+		background-image: url(2.jpg);
+
+		background-size: 100% 100%;
+		transition: 3s;
+		display: flex;
+
+	}
+
+	.menu{
+		width: 200px;
+		height: 600px;
+		background-color: ;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 160px;
+
+
+
+	}
+	.btnn{
+		width: 200px; 
+		height: 80px;
+		margin-top: 50px;
+		display: block;
+		color: white;
+	}
+	.btnn:hover{
+		width: 300px; 
+		height: 100px;
+		transition: 1s;
+		opacity: 0.7;
+		color: gray;
+		
+	}
+	.score{
+		color: white;
+		padding-bottom: 400px;
+		display: none;
+		transition: 2s;
+	}
+	.txt{
+		background-color: ;
+		width: 200px;
+		height: 100px;
+
+	}
+	
+</style>
+</head>
+<body>
+
+	
+
+
+
+<script type="text/javascript">
+
+	
+
+
+let box = document.createElement('div');
+box.classList.add("body");
+box.classList.add("bg-transparent");
+document.body.appendChild(box);
+
+let box3 = document.createElement('div');
+box3.classList.add("txt");
+box.appendChild(box3);
+
+let sc = document.createElement('h2');
+box3.appendChild(sc);
+
+
+let s = 0
+sc.innerHTML = "Score:  " + s;;
+sc.classList.add("score");
+
+let box1 = document.createElement('div');
+box1.classList.add("menu");
+box.appendChild(box1);
+
+let btn = document.createElement('img');
+btn.src = "pl.png";
+btn.classList.add("btnn");
+
+box1.appendChild(btn);
+
+
+let btn2 = document.createElement('img');
+btn2.src = "op.png";
+btn2.classList.add("btnn");
+
+box1.appendChild(btn2);
+
+
+let btn3 = document.createElement('img');
+btn3.src = "ex.png";
+btn3.classList.add("btnn");
+
+box1.appendChild(btn3);
+
+
+
+
+
+
+btn.onclick = function(){
+
+	box.style.backgroundImage = "url(1.png)";
+	btn.style.display = "none";
+	btn2.style.display = "none";
+	btn3.style.display = "none";
+	sc.style.display = "block";
+	setInterval(createPoint, 500);
+	setInterval(proverka, 8000);
+
+
+}
+
+btn3.onclick = function(){
+
+	
+
+}
+
+
+ let randomLeft = function(){
+
+            let rand = Math.random() * 900;
+            let round = Math.round(rand);
+            return round;
+}
+
+        let randomTop = function(){
+            let rand = Math.random() * 700; 
+            let round = Math.round(rand);
+            return round;
+        }     
+      
+        let createPoint = function() {
+
+
+            let img = document.createElement("img");
+
+         	box.appendChild(img);
+           	img.src = "23.png";
+            img.style.position = "absolute";
+            img.style.height = "90px";
+            img.style.width = "90px";
+            img.style.transition = "1s";
+
+
+    
+            img.style.marginLeft = randomLeft() + "px";
+            img.style.marginTop = randomTop() + "px" ;
+
+            img.onclick = function(){
+                img.src = "54.png";
+                img.style.opacity = "0";
+                s = s + 1;
+                sc.innerHTML = "Score:  " + s;
+            }           
+        }
+
+let proverka = function(){
+
+	if(s > 9) {
+		if(!alert('U won(')){window.location.reload();}
+	}
+
+	if(s < 9) {
+		if(!alert('U lose try again(')){window.location.reload();}
+	}
+
+}
+
+        
+
+     
+/*let point = document.createElement('img');
+      document.body.appendChild(point);
+      point.src = "marker.png" 
+      point.classList.add("mark")  
+
+      point.onclick = function(){ //делаем нажатие
+        point.style.display = "none"
+      }
+
+*/
+
+
+/*let text = document.querySelector(".text");
+let vid = document.querySelector(".vid");
+let btn2 = document.querySelector(".but");
+let n = "https://www.youtube.com/embed/";
+
+btn2.onclick = function(){
+
+	vid.src = "https://www.youtube.com/embed/" + text.value;
+	
+
+	videos.push(n + text.value);
+
+
+	
+	
+}
+
+
+		
+		let back = document.querySelector('.back');
+		let next = document.querySelector('.next');
+	
+		
+		
+
+		
+		let videos = [
+			'https://www.youtube.com/embed/d6YT8ARj66Y',
+			'https://www.youtube.com/embed/E84HMLT3dVg',
+			'https://www.youtube.com/embed/5SFDj-tmHzI'
+		];
+		
+	
+		let index = 0;
+
+
+		vid.src = videos[0];
+
+		
+
+		
+		next.onclick = function() {
+			vid.src = videos[index];
+			name.innerHTML = videos[index];
+			index = index + 1;
+			if(index > 2) {
+				index = 0;
+			}
+		}
+		
+		back.onclick = function() {
+			vid.src = videos[index];
+			name.innerHTML = videos[index];
+			index = index - 1;
+			if(index < 0) {
+				index = 2;
+			}
+		}*/
+
+	
+	
+</script>
+
+
+
+</body>
+</html>
